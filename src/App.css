@@ -1,0 +1,2692 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+.hero-content,
+.hero-meta,
+.scroll-indicator {
+  position: relative;
+  z-index: 2;
+}
+:root {
+  --black: #050505;
+  --white: #f5f5f5;
+  --muted: #8c8c8c;
+  --blue: #168cff;
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.site {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 28px 5vw;
+}
+
+.logo {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.menu-button {
+  display: none;
+
+  background: none;
+  border: none;
+  padding: 5px;
+
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-button span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: white;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #050505;
+}
+
+.hero::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 49.9%,
+      rgba(255, 255, 255, 0.04) 50%,
+      transparent 50.1%
+    );
+
+  opacity: 0.3;
+}
+
+.hero-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: var(--blue);
+
+  filter: blur(180px);
+
+  opacity: 0.12;
+
+  border-radius: 50%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  max-width: 1000px;
+  padding: 120px 20px;
+}
+
+.hero-kicker,
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+
+  font-size: 11px;
+  letter-spacing: 0.2em;
+
+  color: var(--blue);
+}
+
+.hero h1 {
+  margin: 20px 0;
+
+  font-size: clamp(80px, 15vw, 220px);
+
+  line-height: 0.8;
+
+  letter-spacing: -0.07em;
+
+  font-weight: 800;
+}
+
+.hero-description {
+  color: var(--muted);
+
+  font-size: 18px;
+
+  margin-bottom: 40px;
+}
+
+.hero-button,
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 16px 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: transparent;
+
+  color: white;
+
+  font-family: 'DM Mono', monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.hero-button:hover,
+.outline-button:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+
+.hero-meta {
+  position: absolute;
+
+  right: 5vw;
+  bottom: 50px;
+
+  display: flex;
+  gap: 10px;
+
+  font-family: 'DM Mono', monospace;
+
+  font-size: 10px;
+
+  color: var(--muted);
+}
+
+.scroll-indicator {
+  position: absolute;
+
+  left: 5vw;
+  bottom: 50px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  font-family: 'DM Mono', monospace;
+
+  font-size: 9px;
+
+  color: var(--muted);
+}
+
+.scroll-line {
+  width: 45px;
+  height: 1px;
+
+  background: var(--muted);
+}
+
+/* GENERAL SECTIONS */
+
+.intro,
+.music-section,
+.culture-section,
+.therapy-section {
+  position: relative;
+
+  min-height: 90vh;
+
+  padding: 120px 8vw;
+}
+
+.section-number {
+  font-family: 'DM Mono', monospace;
+
+  font-size: 10px;
+
+  color: var(--muted);
+
+  letter-spacing: 0.15em;
+}
+
+/* INTRO */
+
+.intro {
+  display: flex;
+  align-items: center;
+}
+
+.intro-content {
+  max-width: 800px;
+
+  margin-left: auto;
+  margin-right: 8vw;
+}
+
+.intro h2,
+.music-heading h2,
+.culture-content h2 {
+  font-size: clamp(60px, 9vw, 140px);
+
+  line-height: 0.85;
+
+  letter-spacing: -0.06em;
+
+  margin: 25px 0 40px;
+}
+
+.intro h2 span,
+.music-heading h2 span,
+.culture-content h2 span {
+  color: var(--blue);
+}
+
+.intro-text,
+.culture-content > p:last-child {
+  max-width: 500px;
+
+  color: var(--muted);
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+/* MUSIC */
+
+.music-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid var(--border);
+}
+
+.music-heading {
+  max-width: 700px;
+}
+
+.music-heading > p:not(.eyebrow) {
+  color: var(--muted);
+
+  max-width: 450px;
+
+  line-height: 1.7;
+
+  margin-bottom: 35px;
+}
+
+/* CULTURE */
+
+.culture-section {
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 140, 255, 0.06),
+      transparent 50%
+    );
+
+  border-top: 1px solid var(--border);
+}
+
+.culture-content {
+  margin-left: auto;
+
+  width: 55%;
+}
+
+/* THERAPY */
+
+.therapy-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border-top: 1px solid var(--border);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(22, 140, 255, 0.12),
+      transparent 50%
+    );
+}
+
+.therapy-content {
+  max-width: 850px;
+}
+
+.therapy-content h2 {
+  font-size: clamp(50px, 8vw, 120px);
+
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+
+  margin: 30px 0;
+}
+
+.therapy-content p:not(.eyebrow) {
+  max-width: 550px;
+
+  margin: 0 auto 35px;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 80px 5vw 30px;
+
+  border-top: 1px solid var(--border);
+}
+
+.footer-logo {
+  font-size: clamp(70px, 14vw, 200px);
+
+  font-weight: 800;
+
+  letter-spacing: -0.08em;
+
+  line-height: 0.8;
+}
+
+.footer > p {
+  margin-top: 40px;
+
+  font-family: 'DM Mono', monospace;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+}
+
+.footer-bottom {
+  margin-top: 80px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-family: 'DM Mono', monospace;
+
+  font-size: 9px;
+
+  color: var(--muted);
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 24px 6vw;
+  }
+
+  .hero h1 {
+    font-size: clamp(70px, 20vw, 130px);
+  }
+
+  .hero-kicker {
+    font-size: 9px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .scroll-indicator {
+    left: 6vw;
+    bottom: 30px;
+  }
+
+  .hero-meta {
+    right: 6vw;
+    bottom: 30px;
+  }
+
+  .intro,
+  .music-section,
+  .culture-section,
+  .therapy-section {
+    min-height: 80vh;
+
+    padding: 90px 7vw;
+  }
+
+  .intro-content,
+  .culture-content {
+    width: 100%;
+    margin: 100px 0 0;
+  }
+
+  .intro h2,
+  .music-heading h2,
+  .culture-content h2 {
+    font-size: clamp(55px, 18vw, 100px);
+  }
+
+  .music-section {
+    display: block;
+  }
+
+  .music-heading {
+    margin-top: 100px;
+  }
+
+  .culture-section {
+    display: block;
+  }
+
+  .footer-logo {
+    font-size: 23vw;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+/* STORY SECTION */
+
+.story-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: #050505;
+}
+
+.story-image {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url('./assets/mount-frere.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
+}
+
+.story-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+
+  z-index: 1;
+}
+
+.story-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 650px;
+
+  padding: 100px 8vw;
+}
+
+.story-content .eyebrow {
+  margin-bottom: 25px;
+
+  font-family: 'DM Mono', monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 0.25em;
+
+  color: #168cff;
+}
+
+.story-content h2 {
+  margin: 0;
+
+  font-size: clamp(60px, 9vw, 130px);
+
+  line-height: 0.85;
+
+  letter-spacing: -0.06em;
+}
+
+.story-content h2 span {
+  color: #168cff;
+}
+
+.story-text {
+  max-width: 500px;
+
+  margin-top: 40px;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.story-location {
+  margin-top: 45px;
+
+  font-family: 'DM Mono', monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+/* =========================
+   MELODIES + HEAL SECTION
+   ========================= */
+
+.melodies-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #050505;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.melodies-background {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(22, 140, 255, 0.12),
+      transparent 55%
+    );
+
+  z-index: 0;
+}
+
+.melodies-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 6vw;
+}
+
+.melodies-cover {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.melodies-cover img {
+  width: min(700px, 78vw);
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.8);
+}
+
+/* TEXT OVER THE ARTWORK */
+
+.melodies-text {
+  position: absolute;
+
+  z-index: 3;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: min(650px, 82%);
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+.melodies-text .eyebrow {
+  margin-bottom: 25px;
+
+  font-size: 11px;
+  letter-spacing: 0.3em;
+
+  color: #168cff;
+}
+
+.melodies-text h2 {
+  margin: 0;
+
+  font-size: clamp(60px, 9vw, 130px);
+
+  line-height: 0.82;
+
+  letter-spacing: -0.06em;
+
+  text-shadow:
+    0 5px 30px rgba(0, 0, 0, 0.9);
+}
+
+.melodies-text h2 span {
+  color: #168cff;
+}
+
+.melodies-description {
+  max-width: 450px;
+
+  margin: 35px auto;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  text-shadow:
+    0 3px 20px rgba(0, 0, 0, 0.95);
+}
+
+.melodies-meta {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 35px;
+
+  margin-bottom: 30px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+
+  color: white;
+
+  text-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.9);
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .melodies-content {
+    padding: 60px 20px;
+  }
+
+  .melodies-cover img {
+    width: 90vw;
+  }
+
+  .melodies-text {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .melodies-text h2 {
+    font-size: clamp(50px, 14vw, 90px);
+  }
+
+  .melodies-description {
+    font-size: 14px;
+  }
+
+}
+/* =========================================
+   MELODIES + HEAL EXPERIENCE
+   ========================================= */
+
+.melodies-experience {
+  position: relative;
+
+  width: 100%;
+  min-height: 180vh;
+
+  overflow: hidden;
+
+  background: #050505;
+
+  padding: 160px 6vw;
+}
+
+/* INTRO */
+
+.experience-intro {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 650px;
+
+  margin-bottom: 120px;
+}
+
+.experience-intro .eyebrow {
+  margin-bottom: 25px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.3em;
+
+  color: #168cff;
+}
+
+.experience-intro h2 {
+  margin: 0;
+
+  font-size: clamp(65px, 10vw, 150px);
+
+  line-height: 0.82;
+
+  letter-spacing: -0.07em;
+}
+
+.experience-intro h2 span {
+  color: #168cff;
+}
+
+.experience-description {
+  max-width: 500px;
+
+  margin-top: 45px;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* PHOTO GALLERY */
+
+.experience-gallery {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 900px;
+}
+
+
+/* INDIVIDUAL IMAGES */
+
+.experience-image {
+  position: absolute;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.7);
+}
+
+.experience-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.8s ease;
+}
+
+.experience-image:hover img {
+  transform: scale(1.05);
+}
+
+
+/* IMAGE 1 */
+
+.image-one {
+  width: 38vw;
+  height: 52vw;
+
+  max-width: 500px;
+  max-height: 680px;
+
+  top: 0;
+  left: 4%;
+}
+
+
+/* IMAGE 2 */
+
+.image-two {
+  width: 28vw;
+  height: 36vw;
+
+  max-width: 380px;
+  max-height: 500px;
+
+  top: 260px;
+  right: 5%;
+}
+
+
+/* IMAGE 3 */
+
+.image-three {
+  width: 32vw;
+  height: 42vw;
+
+  max-width: 430px;
+  max-height: 580px;
+
+  top: 650px;
+  left: 28%;
+}
+
+
+/* IMAGE 4 */
+
+.image-four {
+  width: 25vw;
+  height: 32vw;
+
+  max-width: 340px;
+  max-height: 450px;
+
+  top: 850px;
+  right: 12%;
+}
+
+
+/* STATEMENT */
+
+.experience-statement {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 250px;
+
+  text-align: center;
+}
+
+.experience-statement span {
+  display: block;
+
+  font-size: clamp(60px, 12vw, 180px);
+
+  font-weight: 800;
+
+  letter-spacing: -0.08em;
+}
+
+.experience-statement p {
+  margin-top: 20px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.4em;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .melodies-experience {
+    min-height: auto;
+
+    padding: 100px 20px;
+  }
+
+  .experience-intro {
+    margin-bottom: 70px;
+  }
+
+  .experience-gallery {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .experience-image {
+    position: relative;
+
+    top: auto;
+    left: auto;
+    right: auto;
+
+    width: 100%;
+
+    max-width: none;
+
+    height: 120vw;
+
+    max-height: 600px;
+  }
+
+  .experience-image:nth-child(even) {
+    width: 85%;
+
+    margin-left: auto;
+  }
+
+  .experience-statement {
+    margin-top: 100px;
+  }
+
+}
+/* =========================================
+   MELODIES EXPERIENCE — SCROLL MOTION
+   ========================================= */
+
+.melodies-experience {
+  --experience-progress: 0;
+}
+
+
+/* PHOTO 1 */
+
+.image-one {
+  transform:
+    translateY(
+      calc(
+        var(--experience-progress) * -120px
+      )
+    );
+}
+
+
+/* PHOTO 2 */
+
+.image-two {
+  transform:
+    translateY(
+      calc(
+        var(--experience-progress) * 160px
+      )
+    );
+}
+
+
+/* PHOTO 3 */
+
+.image-three {
+  transform:
+    translateY(
+      calc(
+        var(--experience-progress) * -180px
+      )
+    );
+}
+
+
+/* PHOTO 4 */
+
+.image-four {
+  transform:
+    translateY(
+      calc(
+        var(--experience-progress) * 220px
+      )
+    );
+}
+
+
+/* INTRO FADE */
+
+.experience-intro {
+  opacity: calc(
+    0.35 + var(--experience-progress) * 0.65
+  );
+
+  transform:
+    translateY(
+      calc(
+        (1 - var(--experience-progress)) * 50px
+      )
+    );
+}
+
+
+/* FINAL STATEMENT */
+
+.experience-statement {
+  opacity: calc(
+    var(--experience-progress) * 1
+  );
+
+  transform:
+    translateY(
+      calc(
+        (1 - var(--experience-progress)) * 80px
+      )
+    );
+}
+
+
+/* SMOOTH MOTION */
+
+.experience-image,
+.experience-intro,
+.experience-statement {
+  transition:
+    transform 0.15s linear,
+    opacity 0.15s linear;
+}
+/* =========================================
+   SPLIT TYPOGRAPHY
+   ========================================= */
+/* =========================================
+   SPLIT TEXT REVEAL
+   ========================================= */
+
+.split-heading {
+  overflow: hidden;
+  margin: 0;
+}
+
+.split-line {
+  display: block;
+
+  opacity: 0;
+
+  transform: translateY(120px);
+
+  transition:
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1s ease;
+}
+
+.split-line:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.split-heading.reveal .split-line {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blue-text {
+  color: #168cff;
+}
+
+.big-heading {
+}
+/* =========================================
+   BUSSANI BLUE LIGHT SWEEP
+   ========================================= */
+
+.big-heading {
+  position: relative;
+  display: inline-block;
+
+  overflow: hidden;
+}
+
+
+/* THE LIGHT */
+
+.big-heading::after {
+  content: "";
+
+  position: absolute;
+
+  top: -30%;
+  left: -100%;
+
+  width: 35%;
+  height: 160%;
+
+  background: linear-gradient(
+  90deg,
+  transparent,
+  rgba(22, 140, 255, 0.15),
+  rgba(22, 140, 255, 0.7),
+  rgba(255, 255, 255, 0.35),
+  rgba(22, 140, 255, 0.15),
+  transparent
+);
+
+  filter: blur(18px);
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  z-index: 10;
+}
+
+
+/* WHEN JAVASCRIPT ACTIVATES IT */
+
+.big-heading.sweep-active::after {
+
+  opacity: 1;
+
+  animation:
+    bussaniLightSweep
+    1.2s
+    ease-in-out
+    forwards;
+
+}
+
+
+/* MOVEMENT */
+
+@keyframes bussaniLightSweep {
+
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
+
+}
+/* =========================================
+   MUSIC CATALOGUE — ALBUM GRID
+   ========================================= */
+
+.music-catalogue-hero h1 {
+  color: #168cff;
+}
+
+.music-catalogue-hero h1 span {
+  color: #ffffff;
+}
+
+.music-page .eyebrow {
+  color: #168cff;
+}
+
+.catalogue-intro {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* FEATURED ALBUM */
+
+.featured-release-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 7vw;
+  align-items: center;
+}
+
+.featured-cover {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.featured-cover img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* FEATURED TEXT */
+
+.featured-info h2 {
+  color: #ffffff;
+}
+
+.featured-info h2 span {
+  color: #168cff;
+}
+
+
+/* RELEASE GRID */
+
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 70px 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ALBUM PREVIEWS */
+
+.release-image {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #111;
+}
+
+.release-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.release-card:hover .release-image img {
+  transform: scale(1.05);
+}
+
+
+/* RELEASE TEXT */
+
+.release-card h3 {
+  color: #ffffff;
+}
+
+.release-card p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* CATALOGUE HEADING */
+
+.catalogue-header h2 {
+  color: #ffffff;
+}
+
+.catalogue-header h2 span {
+  color: #168cff;
+}
+
+
+/* BOTTOM HEADING */
+
+.music-bottom h2 {
+  color: #ffffff;
+}
+
+.music-bottom h2 span {
+  color: #168cff;
+}
+
+
+/* TABLET */
+
+@media (min-width: 801px) and (max-width: 1100px) {
+
+  .release-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .featured-release-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-cover {
+    max-width: 380px;
+  }
+
+  .release-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .release-image {
+    max-width: 360px;
+  }
+
+}
+/* =========================================
+   BUSSANI MUSIC — FINAL FEATURED LAYOUT
+   ========================================= */
+
+.music-page .featured-release {
+  padding: 100px 7vw;
+}
+
+.music-page .featured-release-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 480px) minmax(300px, 1fr);
+  gap: 8vw;
+  align-items: center;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+
+/* ALBUM COVER */
+
+.music-page .featured-cover {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.music-page .featured-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+
+/* FEATURED TEXT */
+
+.music-page .featured-info {
+  max-width: 520px;
+}
+
+.music-page .featured-info h2 {
+  font-size: clamp(55px, 7vw, 105px);
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+  color: #fff;
+}
+
+.music-page .featured-info h2 span {
+  color: #168cff;
+}
+
+.music-page .featured-info > p:not(.eyebrow) {
+  max-width: 420px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================
+   RELEASE GRID
+   ========================================= */
+
+.music-page .release-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px 35px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.music-page .release-image {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.music-page .release-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* BLUE + WHITE */
+
+.music-page .eyebrow {
+  color: #168cff;
+}
+
+.music-page .catalogue-intro {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.music-page .catalogue-header h2 {
+  color: #fff;
+}
+
+.music-page .catalogue-header h2 span {
+  color: #168cff;
+}
+
+.music-page .release-card h3 {
+  color: #fff;
+}
+
+.music-page .release-card p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .music-page .featured-release {
+    padding: 80px 20px;
+  }
+
+  .music-page .featured-release-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .music-page .featured-cover {
+    max-width: 360px;
+  }
+
+  .music-page .featured-info h2 {
+    font-size: clamp(55px, 15vw, 90px);
+  }
+
+  .music-page .release-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .music-page .release-image {
+    max-width: 340px;
+  }
+
+}
+/* =========================================
+   MUSIC LISTEN BUTTONS
+   ========================================= */
+
+.music-page .catalogue-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 25px;
+
+  padding: 14px 24px;
+
+  border: 1px solid rgba(22, 140, 255, 0.8);
+
+  background: transparent;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  opacity: 1;
+  visibility: visible;
+
+  position: relative;
+  z-index: 5;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.music-page .catalogue-button:hover {
+  background: #168cff;
+
+  border-color: #168cff;
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+}
+.music-page .release-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.music-page .release-listen-button {
+  display: inline-flex !important;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 18px;
+  margin-bottom: 20px;
+
+  padding: 12px 22px;
+
+  border: 1px solid #168cff;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  position: relative;
+  z-index: 10;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.music-page .release-listen-button:hover {
+  background: #168cff;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+.release-image-link {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  text-decoration: none;
+}
+
+.release-image-link .release-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.release-image-link .release-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.cover-listen {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.release-image-link:hover .release-image img {
+  transform: scale(1.05);
+  filter: brightness(0.6);
+}
+
+.release-image-link:hover .cover-listen {
+  opacity: 1;
+}
+/* =========================================
+   MUSIC VIDEOS
+   ========================================= */
+
+.music-videos-page {
+  min-height: 100vh;
+  background: #050505;
+  color: #ffffff;
+}
+
+
+/* HERO */
+
+.videos-hero {
+  padding: 180px 7vw 120px;
+}
+
+.videos-hero .big-heading {
+  color: #ffffff;
+  margin-top: 25px;
+}
+
+.videos-hero .big-heading span {
+  color: #168cff;
+}
+
+.videos-intro {
+  max-width: 500px;
+  margin-top: 35px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* FEATURED VIDEO */
+
+.featured-video-section {
+  padding: 100px 7vw 130px;
+}
+
+.featured-video-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 70px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.featured-video-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #080808;
+}
+
+.featured-video-player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.featured-video-info h2 {
+  margin-top: 25px;
+  font-size: clamp(60px, 7vw, 110px);
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+}
+
+.featured-video-info h2 span {
+  color: #168cff;
+}
+
+.featured-video-info > p:last-child {
+  max-width: 400px;
+  margin-top: 30px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+}
+
+
+/* VIDEO ARCHIVE */
+
+.video-archive {
+  padding: 100px 7vw;
+}
+
+.video-archive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 80px;
+}
+
+.video-archive-header h2 {
+  color: #ffffff;
+  font-size: clamp(60px, 8vw, 120px);
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+}
+
+.video-archive-header h2 span {
+  color: #168cff;
+}
+
+.video-count {
+  color: #168cff;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   ACTUAL VIDEO GRID
+   ========================================= */
+
+.video-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 70px 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.video-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #080808;
+}
+
+.video-player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+
+/* VIDEO INFORMATION */
+
+.video-meta {
+  display: flex;
+  gap: 25px;
+  margin-top: 22px;
+  color: #168cff;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+}
+
+.video-card h3 {
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+}
+
+.video-card p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* BOTTOM CTA */
+
+.videos-bottom {
+  padding: 180px 7vw;
+  text-align: center;
+}
+
+.videos-bottom h2 {
+  margin: 30px 0 45px;
+  color: #ffffff;
+  font-size: clamp(60px, 9vw, 130px);
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+}
+
+.videos-bottom h2 span {
+  color: #168cff;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .videos-hero {
+    padding: 130px 20px 80px;
+  }
+
+  .featured-video-section {
+    padding: 70px 20px 90px;
+  }
+
+  .featured-video-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .featured-video-info h2 {
+    font-size: clamp(60px, 18vw, 100px);
+  }
+
+  .video-archive {
+    padding: 70px 20px;
+  }
+
+  .video-archive-header {
+    align-items: flex-start;
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr !important;
+    gap: 60px;
+  }
+
+  .video-card h3 {
+    font-size: 26px;
+  }
+
+  .videos-bottom {
+    padding: 120px 20px;
+  }
+
+}
+/* =========================================
+   BUSSANI STORY SECTION
+   ========================================= */
+
+.story-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background: #050505;
+  color: #ffffff;
+}
+
+
+/* BACKGROUND IMAGE */
+
+.story-image {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  transform: scale(1.03);
+
+  filter: grayscale(100%);
+}
+
+
+/* DARK OVERLAY */
+
+.story-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.68) 45%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+}
+
+
+/* CONTENT */
+
+.story-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 80px 7vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* TOP */
+
+.story-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.story-number {
+  color: #168cff;
+
+  font-size: 11px;
+
+  letter-spacing: 0.2em;
+}
+
+
+/* MAIN */
+
+.story-main {
+  max-width: 850px;
+
+  margin: auto 0;
+}
+
+
+/* ORIGIN */
+
+.story-origin {
+  color: #168cff;
+
+  font-size: 11px;
+
+  letter-spacing: 0.2em;
+
+  margin-bottom: 25px;
+}
+
+
+/* HEADING */
+
+.story-heading {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    70px,
+    10vw,
+    150px
+  );
+
+  line-height: 0.8;
+
+  letter-spacing: -0.07em;
+
+  font-weight: 700;
+}
+
+.story-heading span {
+  color: #168cff;
+}
+
+
+/* STORY TEXT */
+
+.story-text {
+  max-width: 520px;
+
+  margin-top: 45px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* LOCATION */
+
+.story-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 35px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  letter-spacing: 0.18em;
+}
+
+.story-arrow {
+  color: #168cff;
+
+  font-size: 18px;
+}
+
+
+/* BOTTOM */
+
+.story-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  max-width: 650px;
+
+  padding-top: 40px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .story-content {
+    padding: 50px 20px;
+  }
+
+  .story-heading {
+    font-size: clamp(
+      65px,
+      18vw,
+      110px
+    );
+  }
+
+  .story-text {
+    font-size: 15px;
+
+    margin-top: 35px;
+  }
+
+  .story-bottom {
+    gap: 20px;
+
+    flex-wrap: wrap;
+  }
+
+  .story-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.92),
+        rgba(0, 0, 0, 0.55)
+      );
+  }
+
+}
+/* =========================================
+   BUSSANI JOURNEY
+   ========================================= */
+
+.journey-section {
+  background: #050505;
+  color: #ffffff;
+  padding: 160px 7vw;
+}
+
+
+/* HEADER */
+
+.journey-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 80px;
+  margin-bottom: 140px;
+}
+
+.journey-header h2 {
+  margin-top: 25px;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    70px,
+    10vw,
+    150px
+  );
+
+  line-height: 0.8;
+
+  letter-spacing: -0.07em;
+}
+
+.journey-header h2 span {
+  color: #168cff;
+}
+
+.journey-intro {
+  max-width: 380px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  margin-bottom: 10px;
+}
+
+
+/* TIMELINE */
+
+.journey-timeline {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* JOURNEY ITEM */
+
+.journey-item {
+  display: grid;
+
+  grid-template-columns:
+    120px
+    1px
+    minmax(0, 1fr);
+
+  gap: 45px;
+
+  min-height: 330px;
+}
+
+
+/* YEAR */
+
+.journey-year {
+  color: #168cff;
+
+  font-size: 12px;
+
+  letter-spacing: 0.18em;
+
+  padding-top: 5px;
+}
+
+
+/* TIMELINE LINE */
+
+.journey-line {
+  position: relative;
+
+  width: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.16);
+}
+
+.journey-line span {
+  position: absolute;
+
+  top: 3px;
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  transform:
+    translateX(-50%);
+
+  background: #168cff;
+
+  border-radius: 50%;
+}
+
+
+/* CONTENT */
+
+.journey-content {
+  padding-bottom: 100px;
+}
+
+.journey-content .eyebrow {
+  color: #168cff;
+}
+
+.journey-content h3 {
+  margin-top: 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    55px,
+    6vw,
+    95px
+  );
+
+  line-height: 0.84;
+
+  letter-spacing: -0.06em;
+}
+
+.journey-content h3 span {
+  color: #168cff;
+}
+
+.journey-content p:last-child {
+  max-width: 520px;
+
+  margin-top: 30px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .journey-section {
+    padding: 100px 20px;
+  }
+
+  .journey-header {
+    display: block;
+
+    margin-bottom: 90px;
+  }
+
+  .journey-header h2 {
+    font-size: clamp(
+      65px,
+      18vw,
+      110px
+    );
+  }
+
+  .journey-intro {
+    margin-top: 40px;
+  }
+
+  .journey-item {
+    grid-template-columns:
+      60px
+      1px
+      minmax(0, 1fr);
+
+    gap: 20px;
+
+    min-height: 280px;
+  }
+
+  .journey-content {
+    padding-bottom: 70px;
+  }
+
+  .journey-content h3 {
+    font-size: 48px;
+  }
+
+}
+/* =========================================
+   BUSSANI VIDEO HERO
+   ========================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* VIDEO */
+
+.hero-video {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+
+/* OVERLAY */
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.55) 55%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+}
+
+
+/* CONTENT */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* BUSSANI */
+
+/* =========================================
+   BUSSANI CINEMATIC TYPE ANIMATION
+   ========================================= */
+
+.hero-title {
+  display: flex;
+  align-items: center;
+}
+
+
+/* TYPING */
+
+.typing-text {
+  display: inline-block;
+
+  color: #ffffff;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  width: 0;
+
+  animation:
+    bussaniTyping 7s steps(7, end) infinite;
+}
+
+
+/* POWDERED BLUE CURSOR */
+
+.typing-cursor {
+  display: inline-block;
+
+  margin-left: 7px;
+
+  color: #168cff;
+
+  text-shadow:
+    0 0 8px rgba(22, 140, 255, 0.8),
+    0 0 20px rgba(22, 140, 255, 0.35);
+
+  animation:
+    cursorBlink 1s steps(1) infinite;
+}
+
+
+/* TYPING + HOLD + FADE + RESET */
+
+@keyframes bussaniTyping {
+
+  /* Start */
+
+  0% {
+    width: 0;
+    opacity: 1;
+    text-shadow: none;
+  }
+
+
+  /* Slowly type */
+
+  30% {
+    width: 7ch;
+    opacity: 1;
+    text-shadow: none;
+  }
+
+
+  /* Hold */
+
+  52% {
+    width: 7ch;
+    opacity: 1;
+
+    text-shadow:
+      0 0 10px rgba(22, 140, 255, 0.25),
+      0 0 30px rgba(22, 140, 255, 0.15);
+  }
+
+
+  /* Gentle glow */
+
+  62% {
+    width: 7ch;
+    opacity: 1;
+
+    text-shadow:
+      0 0 15px rgba(22, 140, 255, 0.5),
+      0 0 45px rgba(22, 140, 255, 0.25);
+  }
+
+
+  /* Fade away */
+
+  75% {
+    width: 7ch;
+    opacity: 0;
+
+    text-shadow:
+      0 0 25px rgba(22, 140, 255, 0.7);
+  }
+
+
+  /* Reset */
+
+  76% {
+    width: 0;
+    opacity: 0;
+    text-shadow: none;
+  }
+
+
+  /* Pause before typing again */
+
+  100% {
+    width: 0;
+    opacity: 0;
+    text-shadow: none;
+  }
+
+}
+
+
+/* CURSOR */
+
+@keyframes cursorBlink {
+
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-video {
+    object-position: center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.88),
+        rgba(0, 0, 0, 0.55)
+      );
+  }
+
+}
+.hero-title {
+  font-size: clamp(40px, 5vw, 100px);
+}
+/* =========================================
+   BUSSANI LOGO ICON
+   ========================================= */
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  text-decoration: none;
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.logo-icon:hover img {
+  transform: scale(1.08);
+
+  filter:
+    drop-shadow(
+      0 0 12px
+      rgba(22, 140, 255, 0.4)
+    );
+}
