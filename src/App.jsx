@@ -1,6 +1,6 @@
 import './App.css'
 import { useEffect, useRef } from 'react'
-import Music from './Music'
+import Music from "./music"
 import MusicVideos from './MusicVideos'
 import bussaniHero from './assets/bussani-hero.jpg'
 import mountFrere from './assets/mount-frere.jpg'
